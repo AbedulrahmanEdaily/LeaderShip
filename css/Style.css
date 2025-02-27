@@ -265,6 +265,8 @@ header .container button:hover {
     }
 }
 
+
+
 /* End Header */
 /* Start Hero */
 .hero {
@@ -643,4 +645,176 @@ video {
     padding-bottom: var(--section-padding);
 }
 
+.schedules .days {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.schedules .days .day {
+    background-color: white;
+
+    padding: 20px;
+    border-left: 3px solid var(--section-color);
+    margin-bottom: 60px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.schedules .days .day h3 span {
+    display: block;
+}
+
+.schedules .days .day:hover {
+    border-left-color: var(--main-color);
+    box-shadow: -15px 15px 20px 4px rgba(0, 0, 0, 0.17);
+}
+
+.schedules .days .day:hover span {
+    color: var(--main-color);
+}
+
+.schedules .days .day.active {
+    border-left-color: var(--main-color);
+    box-shadow: -15px 15px 20px 4px rgba(0, 0, 0, 0.17);
+}
+
+.schedules .days .day.active span {
+    color: var(--main-color);
+}
+
+.schedules .contant .schedule:not(:last-child) {
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.schedules .contant .schedule {
+    display: flex;
+    gap: 40px;
+}
+
+.schedules .contant .schedule .photo-schedule {
+    width: 400px;
+    border-radius: 25px;
+}
+
+.schedules .contant .schedule .information h4 {
+    margin-bottom: 16px;
+}
+
+.schedules .contant .schedule .information p {
+    line-height: 1.5;
+    margin-bottom: 22px;
+}
+
+.schedules .contant .schedule .information .stats {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.schedules .contant .schedule .information .stats .speakers-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.schedules .contant .schedule .information .stats div,
+.schedules .contant .schedule .information .stats span {
+    padding: 0 20px;
+}
+
+@media (max-width: 991px) {
+    .schedules .contant .schedule {
+        flex-direction: column;
+    }
+
+    .schedules .contant .schedule .photo-schedule {
+        width: 100%;
+    }
+}
+
 /* End Schedules */
+/* Start Event */
+.event {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-image: url(../imgs/section-background1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.event::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.275);
+}
+
+.event .container {
+    display: flex;
+}
+
+.event .left,
+.event .right {
+    z-index: 100;
+}
+
+.event .left h2 {
+    color: white;
+    margin: 16px 0 24px;
+}
+
+.event .left p {
+    color: white;
+    width: 90%;
+}
+
+.event .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event .right button {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.3s;
+    margin-left: 80px;
+}
+
+.event .right button:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+@media (max-width: 991px) {
+    .event .container {
+        flex-direction: column;
+    }
+
+    .event .left h2 {
+        font-size: 32px;
+    }
+
+    .event .left p {
+        width: 100%;
+    }
+
+    .event .right {
+        justify-content: flex-start;
+    }
+
+    .event .right button {
+        margin: 24px 0 0;
+    }
+}
+
+/* End Event */
