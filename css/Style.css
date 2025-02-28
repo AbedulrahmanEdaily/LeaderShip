@@ -752,7 +752,7 @@ video {
     position: absolute;
     left: 0;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.275);
+    background-color: rgba(0, 0, 0, 0.475);
 }
 
 .event .container {
@@ -818,3 +818,203 @@ video {
 }
 
 /* End Event */
+/* Start Pricing */
+.pricing {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.pricing .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.pricing .container .card {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.pricing .container .card .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: var(--top-color);
+}
+
+.pricing .container .card .top h4 {
+    color: white;
+}
+
+.pricing .container .card .top span {
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+}
+
+.pricing .container .card .content {
+    padding: 40px;
+
+}
+
+.pricing .container .card .content p {
+    margin-bottom: 16px;
+}
+
+.pricing .container .card .content p:nth-child(3) {
+    padding-bottom: 32px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.pricing .container .card .content p i {
+    margin-right: 15px;
+}
+
+.pricing .container .card .content button {
+    margin-top: 16px;
+    padding: 10px 20px;
+    background-color: var(--top-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.pricing .container .card .content button:hover {
+    background-color: var(--main-color);
+}
+
+/* End Pricing */
+/* Start Venue */
+.venue {
+    padding: var(--section-padding) 0;
+    background-color: var(--section-color);
+}
+
+.venue .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(361px, 1fr));
+    gap: 30px;
+}
+
+.venue .container .time,
+.venue .container .map {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.venue .container .map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.venue .container .time {
+    width: fit-content;
+}
+
+.venue .container .time .top {
+    padding: 20px 30px;
+    background-color: var(--top-color);
+}
+
+.venue .container .time .top h3 {
+    color: white;
+}
+
+.venue .container .time .content {
+    padding: 40px;
+    background-color: white;
+}
+
+.venue .container .time .content span {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.venue .container .time .content i {
+    margin-right: 15px;
+}
+
+.venue .container .time .content p {
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: fit-content;
+}
+
+.venue .container .time .content p:hover {
+    color: var(--main-color)
+}
+
+/* End Venue */
+/* Start Contact */
+.contact {
+    padding: var(--section-padding) 0;
+    background-image: url(../imgs/section-background2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.contact .box {
+    margin: 0 auto;
+    width: 880px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.contact .box .top {
+    padding: 30px 35px;
+    background-color: var(--top-color);
+}
+
+.contact .box .top h2 {
+    color: white;
+}
+
+.contact .box form {
+    padding: 50px
+}
+
+.contact .box form .top-input {
+    padding: 13px 12px;
+    border: none;
+    background-color: var(--section-color);
+    margin-bottom: 24px;
+    margin-right: 16px;
+
+}
+
+.contact .box textarea {
+    width: 100%;
+    padding: 13px 12px;
+    resize: none;
+    background-color: var(--section-color);
+    margin-bottom: 24px;
+    border: none;
+    max-height: 200px;
+}
+
+.contact .box form input[type="submit"] {
+    width: 100%;
+    border: none;
+    padding: 13px 12px;
+    border-radius: 30px;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* End Contact */
