@@ -652,10 +652,8 @@ video {
 
 .schedules .days .day {
     background-color: white;
-
     padding: 20px;
     border-left: 3px solid var(--section-color);
-    margin-bottom: 60px;
     transition: 0.3s;
     cursor: pointer;
 }
@@ -666,7 +664,8 @@ video {
 
 .schedules .days .day:hover {
     border-left-color: var(--main-color);
-    box-shadow: -15px 15px 20px 4px rgba(0, 0, 0, 0.17);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
+    z-index: 1;
 }
 
 .schedules .days .day:hover span {
@@ -675,7 +674,8 @@ video {
 
 .schedules .days .day.active {
     border-left-color: var(--main-color);
-    box-shadow: -15px 15px 20px 4px rgba(0, 0, 0, 0.17);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
+    z-index: 1
 }
 
 .schedules .days .day.active span {
@@ -691,6 +691,7 @@ video {
 .schedules .contant .schedule {
     display: flex;
     gap: 40px;
+    margin-top: 48px;
 }
 
 .schedules .contant .schedule .photo-schedule {
@@ -731,6 +732,21 @@ video {
 
     .schedules .contant .schedule .photo-schedule {
         width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .schedules .days {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+    .schedules .days .day h3 {
+        font-size: 24px;
+    }
+
+    .schedules .days .day h3 p {
+        font-size: 16px;
     }
 }
 
@@ -967,11 +983,11 @@ video {
 
 .contact .box {
     margin: 0 auto;
-    width: 880px;
     box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
-    border-radius: 12px;
+    border-radius: 20px;
     overflow: hidden;
     background-color: #fff;
+    width: 75%;
 }
 
 .contact .box .top {
@@ -981,29 +997,50 @@ video {
 
 .contact .box .top h2 {
     color: white;
+    width: fit-content;
 }
 
 .contact .box form {
-    padding: 50px
+    padding: 50px;
 }
 
 .contact .box form .top-input {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.contact .box form .input {
     padding: 13px 12px;
+    width: 100%;
     border: none;
     background-color: var(--section-color);
-    margin-bottom: 24px;
-    margin-right: 16px;
-
+    font-size: 16px;
+    outline: 0;
+    flex-basis: calc((100% / 3) - 11px);
+    border-radius: 4px;
+    transition: 2.05s;
+    outline: none;
 }
 
 .contact .box textarea {
     width: 100%;
+    height: 145px;
     padding: 13px 12px;
     resize: none;
     background-color: var(--section-color);
-    margin-bottom: 24px;
     border: none;
     max-height: 200px;
+    font-size: 16px;
+    margin: 16px 0;
+    transition: 0.05s;
+    border-radius: 4px;
+    outline: none;
+}
+
+.contact .box form input:focus,
+.contact .box textarea:focus {
+    outline: 4px solid #bfdef8
 }
 
 .contact .box form input[type="submit"] {
@@ -1015,6 +1052,117 @@ video {
     color: white;
     font-weight: 700;
     font-size: 18px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.contact .box form input[type="submit"]:hover {
+    background-color: var(--top-color);
+}
+
+@media (max-width: 767px) {
+    .contact .box {
+        width: 100%;
+    }
+
+    .contact .box .top h2 {
+        font-size: 32px;
+    }
+
+    .contact .box form {
+        padding: 25px;
+    }
+
+    .contact .box form .top-input {
+        flex-direction: column;
+    }
 }
 
 /* End Contact */
+/* Start footer */
+footer {
+    padding: var(--section-padding) 0;
+}
+
+footer .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 48px;
+    margin-bottom: 48px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+footer .top .logo {
+    color: var(--main-color);
+    display: flex;
+    align-items: center;
+}
+
+footer .top .logo i {
+    margin-right: 5px;
+}
+
+footer .top .logo span {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+footer .top .social-links {
+    flex: 1;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+}
+
+footer .top .social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+footer .top .social-links i {
+    color: black;
+    transition: 0.3s;
+}
+
+footer .top .social-links a:hover {
+    background-color: var(--main-color);
+}
+
+footer .top .social-links a:hover i {
+    color: white;
+}
+
+footer .buttom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer .buttom ul {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+footer .buttom ul li a {
+    font-size: 16px;
+    color: #717275;
+    margin: 0 20px 0 0;
+}
+
+footer .buttom ul li a:hover {
+    color: var(--main-color);
+}
+
+footer .buttom p {
+    font-size: 16px;
+}
+
+/* End footer */
