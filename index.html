@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Join the Leadership Conference 2025 in Times Square, NY. Network with top speakers, attend workshops, and boost your leadership skills.">
+
     <!-- link css file -->
     <link rel="stylesheet" href="css/Style.css">
     <!-- link font text -->
@@ -19,22 +22,26 @@
 
 <body>
     <!-- Start Header -->
-    <header>
+    <header class="header">
         <div class="container">
-            <a href="#" class="logo">
+            <a href="#" class="logo" id="logo">
                 <i class="fa-solid fa-bullseye fa-3x"></i>
                 <span>LeaderShip<br>Events</span>
             </a>
-            <i class="fa-solid fa-bars fa-3x bars"></i>
+            <span class="bars">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
             <nav>
-                <ul>
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#speakers">Speakers</a></li>
-                    <li><a href="#sckedules">Sckedules</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#venue">Venue</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul class="nav">
+                    <li class="nav-item"><a href="#home" class="active">Home</a></li>
+                    <li class="nav-item"><a href="#about">About</a></li>
+                    <li class="nav-item"><a href="#speakers">Speakers</a></li>
+                    <li class="nav-item"><a href="#sckedules">Schedules</a></li>
+                    <li class="nav-item"><a href="#pricing">Pricing</a></li>
+                    <li class="nav-item"><a href="#venue">Venue</a></li>
+                    <li class="nav-item"><a href="#contact">Contact</a></li>
                 </ul>
                 <button>Buy Teckets</button>
             </nav>
@@ -46,14 +53,14 @@
         <section class="hero" id="home">
             <div class="container">
                 <div class="content">
-                    <h1 class="section-text"><span>Leadership</span> Conference 2025</h2>
-                        <div>
-                            <span>July 12 to 18, 2025</span>
-                            <span>Times Square, NY</span>
-                        </div>
-                        <a href="#about">
-                            <i class="fa-solid fa-arrow-down fa-2x"></i>
-                        </a>
+                    <h1 class="section-text"><span>Leadership</span> Conference 2025</h1>
+                    <div>
+                        <span>July 12 to 18, 2025</span>
+                        <span>Times Square, NY</span>
+                    </div>
+                    <a href="#about" name="about">
+                        <i class="fa-solid fa-arrow-down fa-2x"></i>
+                    </a>
                 </div>
             </div>
             <video muted loop autoplay>
@@ -329,7 +336,7 @@
                         <p><i class="fa-solid fa-gamepad"></i>After Party</p>
                         <p><i class="fa-regular fa-message"></i> 24/7 Support</p>
                         <p>Quick group meetings for multiple teams</p>
-                        <button>But Tickets</button>
+                        <button>Buy Tickets</button>
                     </div>
                 </div>
                 <div class="card">
@@ -342,7 +349,7 @@
                         <p><i class="fa-solid fa-radio"></i>Group Meetings + After Party</p>
                         <p><i class="fa-regular fa-message"></i>24/7 Support + Instant Chats</p>
                         <p>Quick group meetings for multiple teams</p>
-                        <button>But Tickets</button>
+                        <button>Buy Tickets</button>
                     </div>
                 </div>
                 <div class="card">
@@ -355,7 +362,7 @@
                         <p><i class="fa-solid fa-radio"></i>Group Meetings + After Party</p>
                         <p><i class="fa-regular fa-message"></i>24/7 Support + Instant Chats</p>
                         <p>group talks and private chats for multiple teams</p>
-                        <button>But Tickets</button>
+                        <button>Buy Tickets</button>
                     </div>
                 </div>
             </div>
@@ -367,9 +374,8 @@
             <div class="container">
                 <div class="map">
                     <iframe class="google-map"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1511.091461689997!2d-73.9866630916883!3d40.758001294831736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855a96da09d%3A0x860bf5a5e1a00a68!2sTimes%20Square%2C%20New%20York%2C%20NY%2010036%2C%20USA!5e0!3m2!1sen!2ssg!4v1643035529098!5m2!1sen!2ssg"
-                        width="100%" height="371.59" allowfullscreen="" loading="lazy"><iframe class="google-map"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1511.091461689997!2d-73.9866630916883!3d40.758001294831736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855a96da09d%3A0x860bf5a5e1a00a68!2sTimes%20Square%2C%20New%20York%2C%20NY%2010036%2C%20USA!5e0!3m2!1sen!2ssg!4v1643035529098!5m2!1sen!2ssg"></iframe></iframe>
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1511.091461689997!2d-73.9866630916883!3d40.758001294831736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855a96da09d%3A0x860bf5a5e1a00a68!2sTimes%20Square%2C%20New%20York%2C%20NY%2010036%2C%20USA!5e0!3m2!1sen!2ssg!4v1643035529098!5m2!1sen!2ssg">
+                    </iframe>
                 </div>
                 <div class="time">
                     <div class="top">
@@ -432,6 +438,7 @@
             </div>
         </div>
     </footer>
+    <script src="js.js"></script>
 </body>
 
 </html>

@@ -143,11 +143,15 @@ header {
     position: fixed;
     min-height: 78px;
     z-index: 1000;
+    overflow: hidden;
+    transition: all 1s;
 }
 
 header .container {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    position: relative;
 }
 
 header .container .logo {
@@ -204,22 +208,13 @@ header .container button {
     font-weight: bold;
     border: none;
     cursor: pointer;
-
 }
 
 header .container button:hover {
     background-color: var(--main-color);
 }
 
-@media (max-width: 991px) {
-    header {
-        padding: 15px 0;
-    }
-
-    header .container {
-        justify-content: space-between;
-    }
-
+@media (max-width: 1199px) {
     header .container .logo {
         font-size: 12px;
     }
@@ -228,20 +223,38 @@ header .container button:hover {
         font-size: 16px;
     }
 
+    header .container ul li a {
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    header {
+        padding: 15px 0;
+    }
+
+    header.open {
+        height: 390px;
+    }
+
+    header .container {
+        justify-content: space-between;
+    }
+
     header .container nav ul {
         position: absolute;
         left: 0;
-        top: 45px;
+        top: 55px;
         background-color: var(--top-color);
         flex-direction: column;
-        padding: 30px 15px 15px;
+        padding: 23px;
         width: 100%;
-        display: none;
-        z-index: -1;
+        display: flex;
+
     }
 
     header .container nav ul li {
-        margin-bottom: 10px;
+        padding: 0 0 15px
     }
 
     header .container button {
@@ -253,11 +266,20 @@ header .container button:hover {
 
     header .container .bars {
         order: -1;
-        display: block;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 8px;
+        cursor: pointer;
     }
 
-    header .container .bars:hover+nav ul {
-        display: block;
+    header .container .bars span {
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        border-radius: 12px;
     }
 
     header .container nav {
@@ -1019,8 +1041,8 @@ video {
     outline: 0;
     flex-basis: calc((100% / 3) - 11px);
     border-radius: 4px;
-    transition: 2.05s;
-    outline: none;
+    transition: 0.05s;
+    outline-color: transparent;
 }
 
 .contact .box textarea {
@@ -1035,7 +1057,7 @@ video {
     margin: 16px 0;
     transition: 0.05s;
     border-radius: 4px;
-    outline: none;
+    outline-color: transparent;
 }
 
 .contact .box form input:focus,
@@ -1081,7 +1103,7 @@ video {
 /* End Contact */
 /* Start footer */
 footer {
-    padding: var(--section-padding) 0;
+    padding: var(--section-padding) 0 40px 0;
 }
 
 footer .top {
