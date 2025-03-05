@@ -144,7 +144,6 @@ header {
     min-height: 78px;
     z-index: 1000;
     overflow: hidden;
-    transition: all 1s;
 }
 
 header .container {
@@ -265,13 +264,11 @@ header .container button:hover {
     }
 
     header .container .bars {
+        position: relative;
         order: -1;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        padding: 8px;
+        width: 34px;
+        height: 34px;
+        display: block;
         cursor: pointer;
     }
 
@@ -280,6 +277,43 @@ header .container button:hover {
         height: 3px;
         background-color: white;
         border-radius: 12px;
+        position: absolute;
+        transition: 0.3s;
+    }
+
+    header .container .bars span:first-child {
+        top: 10px;
+        left: 0;
+    }
+
+    header .container .bars span:nth-child(2) {
+        top: 22px;
+        left: 0;
+    }
+
+    header .container .bars span:last-child {
+        top: 34px;
+        left: 0;
+    }
+
+    header .container .bars.x:hover span {
+        background-color: rgba(241, 83, 83, 0.89);
+    }
+
+    header .container .bars.x span:nth-child(2) {
+        opacity: 0;
+    }
+
+    header .container .bars.x span:first-child {
+        left: 0;
+        top: 17px;
+        transform: rotate(45deg);
+    }
+
+    header .container .bars.x span:last-child {
+        left: 0;
+        top: 17px;
+        transform: rotate(-45deg);
     }
 
     header .container nav {
@@ -675,9 +709,11 @@ video {
 .schedules .days .day {
     background-color: white;
     padding: 20px;
+    border: 0;
     border-left: 3px solid var(--section-color);
     transition: 0.3s;
     cursor: pointer;
+    text-align: start;
 }
 
 .schedules .days .day h3 span {
@@ -704,10 +740,12 @@ video {
     color: var(--main-color);
 }
 
-.schedules .contant .schedule:not(:last-child) {
-    margin-bottom: 48px;
-    padding-bottom: 48px;
-    border-bottom: 1px solid #dee2e6;
+.schedules .contant .day-content {
+    display: none;
+}
+
+.schedules .contant .day-content.shwo {
+    display: block;
 }
 
 .schedules .contant .schedule {
@@ -716,18 +754,25 @@ video {
     margin-top: 48px;
 }
 
+.schedules .contant .schedule:not(:last-child) {
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid #dee2e6;
+}
+
 .schedules .contant .schedule .photo-schedule {
     width: 400px;
     border-radius: 25px;
 }
 
-.schedules .contant .schedule .information h4 {
-    margin-bottom: 16px;
+.schedules .contant .schedule .information {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .schedules .contant .schedule .information p {
     line-height: 1.5;
-    margin-bottom: 22px;
 }
 
 .schedules .contant .schedule .information .stats {
