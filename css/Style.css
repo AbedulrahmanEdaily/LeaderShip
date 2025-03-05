@@ -257,7 +257,7 @@ header .container button:hover {
     }
 
     header .container button {
-        font-size: 16px;
+        font-size: 14px;
         background-color: var(--top-color);
         width: 140px;
         padding: 8px 16px;
@@ -282,17 +282,17 @@ header .container button:hover {
     }
 
     header .container .bars span:first-child {
-        top: 10px;
+        top: 5px;
         left: 0;
     }
 
     header .container .bars span:nth-child(2) {
-        top: 22px;
+        top: 17px;
         left: 0;
     }
 
     header .container .bars span:last-child {
-        top: 34px;
+        top: 29px;
         left: 0;
     }
 
@@ -321,7 +321,12 @@ header .container button:hover {
     }
 }
 
-
+@media (max-width: 767px) {
+    header .container .logo {
+        flex: 1;
+        justify-content: flex-end;
+    }
+}
 
 /* End Header */
 /* Start Hero */
