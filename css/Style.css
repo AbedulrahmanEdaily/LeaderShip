@@ -144,6 +144,7 @@ header {
     min-height: 78px;
     z-index: 1000;
     overflow: hidden;
+    transition: 0.5s;
 }
 
 header .container {
@@ -190,6 +191,10 @@ header .container nav ul {
     justify-content: flex-end;
 }
 
+header .container ul li {
+    transition: 0.3s;
+}
+
 header .container ul li a {
     padding-right: 40px;
 }
@@ -233,7 +238,8 @@ header .container button:hover {
     }
 
     header.open {
-        height: 390px;
+        min-height: 490px;
+        transform: scaleY(1);
     }
 
     header .container {
@@ -243,17 +249,27 @@ header .container button:hover {
     header .container nav ul {
         position: absolute;
         left: 0;
-        top: 55px;
+        top: 78px;
         background-color: var(--top-color);
         flex-direction: column;
-        padding: 23px;
         width: 100%;
         display: flex;
-
+        transition: 0.5s;
+        z-index: -1;
     }
 
     header .container nav ul li {
-        padding: 0 0 15px
+        padding: 15px
+    }
+
+    header .container nav ul li:hover {
+        padding-left: 25px;
+    }
+
+    header .container nav ul li a {
+        padding: 0;
+        width: 100%;
+        display: block;
     }
 
     header .container button {
@@ -716,7 +732,6 @@ video {
     padding: 20px;
     border: 0;
     border-left: 3px solid var(--section-color);
-    transition: 0.3s;
     cursor: pointer;
     text-align: start;
 }
@@ -746,11 +761,19 @@ video {
 }
 
 .schedules .contant .day-content {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
 }
 
-.schedules .contant .day-content.shwo {
-    display: block;
+.schedules .contant .day-content.show {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
 }
 
 .schedules .contant .schedule {
@@ -1220,7 +1243,12 @@ footer .buttom {
 
 footer .buttom ul {
     display: flex;
-    margin-bottom: 20px;
+}
+
+@media (max-width: 1199px) {
+    footer .buttom ul {
+        margin-bottom: 20px;
+    }
 }
 
 footer .buttom ul li a {

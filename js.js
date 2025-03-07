@@ -9,35 +9,54 @@ clickButton.onclick = function () {
 };
 
 let clickday = document.querySelectorAll(".day");
-let schedules = document.querySelectorAll(".schedule");
 let dayConten = document.querySelectorAll(".day-content");
 
+clickday.forEach((day, i) => {
+    day.addEventListener("click", function () {
+        // Remove active class from previous active day
+        document.querySelector(".day.active")?.classList.remove("active");
+        day.classList.add("active");
 
-for (let i = 0; i < clickday.length; i++) {
-    clickday[i].onclick = function () {
-        if (!(clickday[i].classList.contains("active"))) {
-            for (let j = 0; j < clickday.length; j++) {
-                if (clickday[j].classList.contains("active")) {
-                    clickday[j].classList.remove("active");
-                    break;
-                }
+        // Hide previously shown content
+        document.querySelector(".day-content.show")?.classList.remove("show");
+
+        // Show the corresponding content
+        dayConten.forEach((content) => {
+            if (Number(content.getAttribute("day")) === i + 1) {
+                content.classList.add("show");
             }
-            clickday[i].classList.add("active");
+        });
+    });
+});
+
+
+const navLinks = document.querySelectorAll('.nav-item');
+
+// مراقبة التمرير
+window.addEventListener('scroll', () => {
+    let currentSection = '';
+
+    navLinks.forEach(link => {
+        const section = document.querySelector(link.getAttribute('data-target'));
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+
+        if (window.scrollY >= sectionTop - sectionHeight / 3 && window.scrollY < sectionTop + sectionHeight) {
+            currentSection = link.getAttribute('data-target');
         }
-        for (let j = 0; j < clickday.length; j++) {
-            if (dayConten[j].getAttribute("day") == i + 1) {
-                if (!(dayConten[i].classList.contains("shwo"))) {
-                    for (let k = 0; k < clickday.length; k++) {
-                        if (dayConten[k].classList.contains("shwo")) {
-                            dayConten[k].classList.remove("shwo");
-                            break;
-                        }
-                    }
-                    dayConten[j].classList.add("shwo");
-                }
-            }
+    });
+
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+
+
+    if (currentSection) {
+        const currentLink = Array.from(navLinks).find(link => link.getAttribute('data-target') === currentSection);
+        if (currentLink) {
+            currentLink.classList.add('active');
         }
     }
-}
-
-
+});
