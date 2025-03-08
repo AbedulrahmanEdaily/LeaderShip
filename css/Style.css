@@ -31,25 +31,42 @@ body {
     margin-right: auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width:576px) {
+
     .container {
-        width: 750px;
+        max-width: 540px
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width:768px) {
+
     .container {
-        width: 970px;
+        max-width: 720px
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width:992px) {
+
     .container {
-        width: 1170px;
+        max-width: 960px
     }
 }
 
-h2,
+@media (min-width:1200px) {
+
+    .container {
+        max-width: 1140px
+    }
+}
+
+@media (min-width:1400px) {
+
+    .container {
+        max-width: 1320px
+    }
+}
+
+ul h2,
 h3,
 h4,
 h5,
@@ -436,7 +453,7 @@ video {
 
 .highlight .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
     gap: 20px
 }
 
@@ -724,7 +741,7 @@ video {
 
 .schedules .days {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }
 
 .schedules .days .day {
@@ -937,7 +954,7 @@ video {
 
 .pricing .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
     gap: 30px;
 }
 
@@ -1007,23 +1024,18 @@ video {
 }
 
 .venue .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(361px, 1fr));
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
-.venue .container .time,
-.venue .container .map {
+.venue .container .time {
     box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
     border-radius: 12px;
     overflow: hidden;
     background-color: #fff;
-}
-
-.venue .container .map iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+    flex-basis: 35%;
 }
 
 .venue .container .time {
@@ -1064,6 +1076,17 @@ video {
 
 .venue .container .time .content p:hover {
     color: var(--main-color)
+}
+
+@media (max-width: 991px) {
+    .venue .container {
+        flex-direction: column;
+    }
+
+    .venue .container .time,
+    .venue .container .map {
+        width: 100%;
+    }
 }
 
 /* End Venue */
